@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+//숫자와 문자가 혼합되어 있는 문장에서 숫자만 딱 빼서 출력하는 코드를 만들어 보아라.
+
+// ex:  1h2h3456   =>  123456
+
+
+function onlyNum(n) {
+    const arr = [];
+    n.split('').map(num=>{
+        if(isNaN(num) == false) {
+            arr.push(num)
+        }
+    })
+    return arr.join('')
+}
+
+console.log(onlyNum('12312sadasda3'))
+    </script>
+</body>
+</html>

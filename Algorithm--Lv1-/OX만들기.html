@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //입력받은 숫자 만큼 의 행과 열이 있는데 첫번째 행에는 제일끝이 X 나머지는 O
+        //두번째 행에는 제일 끝과 그 다음번째가 X 나머지는 O가 나오게 알고리즘을 작성하여라 
+        // N=6일시에 
+        //OOOOOX
+        //OOOOXO
+        //OOOXOO
+        //OOXOOO
+        //OXOOOO
+        //XOOOOO
+
+        function oxFunc(n) {
+            let arr = '';
+            for(let i = 0; i<n; i++) {
+                for(let j =0; j<n; j++) {
+                    if(j == n-i-1) {
+                        arr +='X'
+                    } else {
+                        arr += 'O'
+                    }
+                   
+                }
+                arr += '\n'
+            }
+            return arr
+        }
+    </script>
+</body>
+</html>

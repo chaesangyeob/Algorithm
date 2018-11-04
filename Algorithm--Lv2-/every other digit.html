@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+// 모든 짝수번째 숫자를 * 로 치환하시오.(홀수번째 숫자,또는 짝수번째 문자를 치환하면 안됩니다.) 
+// Example: a1b2cde3~g45hi6 → a*b*cde*~g4*hi6
+// 출처:http://regex101.com/quiz/
+
+function replace (n) {
+    let str =''
+    
+    for(let i =0; i<n.length; i++) {
+        if(isNaN(n[i]) == false && i % 2 !== 0) {
+           str +=n[i].replace(/[0-9]/gi,'*')
+        } else {
+            str +=n[i]
+        }
+    }
+    return str
+}
+
+console.log(replace('a1b2cde3~g45hi6'))
+    </script>
+</body>
+</html>

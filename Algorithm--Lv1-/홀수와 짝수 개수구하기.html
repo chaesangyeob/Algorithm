@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+// 홀수와 짝수의 개수를 구하는 프로그램을 만들어라.
+
+// [3, 4, 5, 6, 7]
+// = 홀수 3개, 짝수 2개
+// [12, 16, 22, 24, 29]
+// = 홀수 1개, 짝수 4개 
+// [41, 43, 45, 47, 49]
+// = 홀수 5개, 짝수 0개
+
+// 홀수 : 2로 나누어 떨어지지 않는 정수
+// 짝수 : 2로 나누어 떨어지는 정수
+// 출처: 코딩도장
+
+function checkNum(...arguments) {
+    const arr = [...arguments];
+    if(arr.includes(0)) {
+        return `0은 짝수도 홀수도 아님으로, 0을 빼고 입력해주세요.`
+    }
+ 
+    const even = arr.filter(num => {
+        return num%2 ==0
+    })
+    const odd = arr.filter(num => {
+        return num%2 !==0
+    })
+    return `주어진 인자들 중에 짝수의 개수는 ${even.length}개 이고, 홀수의 개수는 ${odd.length}개 입니다`
+}
+
+console.log(checkNum(1,2,3,4,5))
+    </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+// 두 날짜(YYYYMMDD)의 차이 일수를 구하는 프로그램을 작성하시오.
+
+// ※ 단, 프로그래밍 언어에서 지원하는 날짜차이를 계산하는 라이브러리는 사용하지 말것
+
+// 예)
+
+// 20070515 sub 20070501 = 14
+// 20070501 sub 20070515 = 14
+// 20070301 sub 20070515 = 75
+
+function calculator (a,b) {
+    const [arr1,arr2] = [a,b];
+    const yearA =arr1.slice(0,4);
+    const yearB =arr2.slice(0,4);
+    const monthsA =arr1.slice(4,6);
+    const monthsB =arr2.slice(4,6);
+    const dayA = arr1.slice(6)
+    const dayB = arr2.slice(6)
+    
+
+    let test1 = [];
+    let test2 = [];
+    for(let i =1; i<= parseInt(monthsA); i++ ) {
+        test1.push(i);
+    }
+    for(let i =1; i<parseInt(monthsB); i++) {
+        test2.push(i)
+    }
+    const same = test2.filter(x => !test1.includes(x))
+    same.unshift(parseInt(monthsA))
+    
+    const monthsToDay = same.map(x=> {
+        if(x == 1 || x == 3 || x == 5 ||x == 7 ||x == 8 ||x == 10 ||x == 12) {
+            x =31
+        }
+        else if(x == 2) {
+            x=28
+        }
+        else {
+            x=30
+        }
+        return x
+    })
+    const answerMonth = monthsToDay.reduce((a,b)=>a+b);
+
+
+    const yearMinuse = parseInt(yearB) - parseInt(yearA);
+    const dayMinuse = dayB - dayA;
+    return `${yearMinuse*365+answerMonth+dayMinuse}`
+  
+}
+
+console.log(calculator('20070301','20070515'))
+    </script>
+</body>
+</html>

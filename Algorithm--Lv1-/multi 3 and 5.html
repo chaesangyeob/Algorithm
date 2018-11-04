@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+<
+
+<script>
+//  10미만의 자연수에서 3과 5의 배수를 구하면 3,5,6,9이다. 이들의 총합은 23이다.
+
+// 1000미만의 자연수에서 3,5의 배수의 총합을 구하라.
+function giveMyTalentBack() {
+    let multiThree = 0;
+    let multiFive = 0;
+    let multiMinus = 0;
+    let sum =0;
+    for(let i = 0; i<1000; i++) {
+        if(i%3 ==0) {
+            multiThree += i
+        } 
+    }
+
+    for(let i = 0; i<1000; i++) {
+        if(i%5 ==0) {
+            multiFive += i
+        } 
+    }
+
+    for(let i = 0; i<1000; i++) {
+        if(i % 15 ==0) {
+            multiMinus +=i
+        }
+    }
+    console.log('multiThree',multiThree)
+    console.log('multiFive',multiFive)
+    console.log('multiMinus',multiMinus)
+
+    sum = multiThree + multiFive - multiMinus;
+    console.log(sum)
+}
+
+giveMyTalentBack()
+
+</script>
+
+</body>
+</html>

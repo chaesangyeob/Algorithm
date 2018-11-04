@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+// 철이는 아스키코드에 대해 공부하고있었습니다.
+
+// 하지만 기억력이 좋지않아 순서를 잊어먹게되는탓에 프로그램을 하나 만들어두려합니다.
+
+// 문자를 입력받으면 그 문자에 해당하는 아스키코드를 출력하는 코드를 작성해주세요.
+
+// 출력조건
+
+// a는 아스키코드로 97입니다.
+
+// d는 아스키코드로 100입니다.
+
+// A는 아스키코드로 65입니다.
+function askiCode(n){
+    // const str = n.charCodeAt()
+    const a = n.split('');
+    const b =a.map(one => {
+        return `${one}에 해당하는 아스키코드는 ${one.charCodeAt()}입니다.`
+    })
+    
+    return b
+    
+}
+    </script>
+</body>
+</html>

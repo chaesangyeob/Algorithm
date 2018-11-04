@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+// 주어진 문자열(공백 없이 쉼표로 구분되어 있음)을 가지고 아래 문제에 대한 프로그램을 작성하세요.
+
+// 이유덕,이재영,권종표,이재영,박민호,강상희,이재영,김지완,최승혁,이성연,박영서,박민호,전경헌,송정환,김재성,이유덕,전경헌
+
+// 김씨와 이씨는 각각 몇 명 인가요?
+// "이재영"이란 이름이 몇 번 반복되나요?
+// 중복을 제거한 이름을 출력하세요.
+// 중복을 제거한 이름을 오름차순으로 정렬하여 출력하세요.
+const arr = ['이유덕','이재영','권종표','이재영','박민호','강상희','이재영','김지완','최이혁','이성연','박영서','박민호','전경헌','송정환','김재성','이유덕','전경헌']
+
+function useReduce() {
+    const b =arr.reduce((accumulator,value)=> {
+       if(accumulator.hasOwnProperty(value)) {
+           accumulator[value] +=1
+       } else {
+           accumulator[value] =1
+       } 
+       return accumulator
+    },{})
+    return b
+} 
+
+function howManyGimYi() {
+    const arr3 = []
+    arr.map(a=>{
+        if(a[0] =='이' || a[0] =='김') {
+            arr3.push(a)
+        }
+    })
+    return arr3.length
+} //이씨와 김씨는 몇번나오나
+
+//이재영이라는 사람이 몇번 나오냐
+console.log(useReduce().이재영)
+
+
+
+function deleteDuplicate() {
+    const mySet = new Set(arr)
+    return [...mySet]
+} //중복을 제거한 배열
+
+const sort = deleteDuplicate().sort((a,b) => a>b ? 1 : -1)
+//오름차순
+
+    </script>
+</body>
+</html>

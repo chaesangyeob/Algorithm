@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // 2진법이란, 어떤 자연수를 0과 1로만 나타내는 것이다. 
+    // 예를 들어 73은 64(2^6)+8(2^3)+1(2^0)이기 때문에 1001001으로 표현한다. 
+    // 어떤 숫자를 입력받았을 때 그 숫자를 2진법으로 출력하는 프로그램을 작성하시오.
+
+    function two(n) {
+        let num = [];
+        let a = n
+        let b = 0;
+        
+        // let a = n / 2  //몫
+        // let b = n % 2  //나머지
+       while(a>=1) {
+            b = Math.floor(a % 2);
+            a = Math.floor(a / 2);
+            num.push(b);
+       }
+       
+       console.log(num.reverse().join(''))
+       
+    }
+    </script>
+</body>
+</html>

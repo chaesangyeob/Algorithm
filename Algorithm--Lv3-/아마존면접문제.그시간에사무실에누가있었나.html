@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+// A사무실에는 특정일자의 출퇴근 시간이 기록된 거대한 로그파일이 있다고 한다.
+// 파일의 형식은 다음과 같다. (한 라인에서 앞부분은 출근시간(HH:MM:SS), 뒷부분은 퇴근시간이다)
+// 09:12:23 11:14:35
+// 10:34:01 13:23:40
+// 10:34:31 11:20:10
+// 특정시간을 입력(예:11:05:20)으로 주었을 때 그 시간에 총 몇 명이 사무실에 있었는지 알려주는 함수를 작성하시오.
+
+function isTherePeople(a,b,c) {
+    //a는 출근시간
+    //b는 퇴근시간
+    //c는 특정시간
+
+    const arrA=parseInt(a.replace(/:/gi,''))
+    const arrB=parseInt(b.replace(/:/gi,''))
+    const arrC=parseInt(c.replace(/:/gi,''))
+   
+    if(arrA<arrC && arrB>arrC) {
+        return `${c}시간에 사무실에 있었다.`
+    } else {
+        return `${c}시간에 사무실에 없었다.`
+    } 
+    
+}
+
+    </script>
+</body>
+</html>

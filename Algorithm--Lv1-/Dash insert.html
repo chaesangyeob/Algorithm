@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+// DashInsert 함수는 숫자로 구성된 문자열을 입력받은 뒤, 
+// 문자열 내에서 홀수가 연속되면 두 수 사이에 - 를 추가하고, 
+// 짝수가 연속되면 * 를 추가하는 기능을 갖고 있다. 
+// (예, 454 => 454, 4546793 => 454*67-9-3) 
+// DashInsert 함수를 완성하자. 출처:코딩도장
+
+// 입력 - 화면에서 숫자로 된 문자열을 입력받는다.
+// "4546793"
+// 출력 - *, -가 적절히 추가된 문자열을 화면에 출력한다.
+// "454*67-9-3"
+
+function num(n) {
+    const split = n.split('');
+    let arr =''
+    for(let i=0; i<split.length; i++) {
+        if(split[i]%2 == 0 && split[i+1]%2 == 0) {
+            arr +=split[i];
+            arr +='*'
+        } else if(split[i]%2 ==1 && split[i+1]%2 ==1) {
+            arr +=split[i];
+            arr +='-'
+        } else if(split[i]%2 != split[i+1]%2) {
+            arr +=split[i]
+        }
+    }
+    console.log(arr)
+   return arr;
+}
+
+num('4546793')
+    </script>
+</body>
+</html>

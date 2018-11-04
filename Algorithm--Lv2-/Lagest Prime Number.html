@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+// 출처 : http://projecteuler.net/problem=3, 한국어 사이트
+
+// 프로젝트 오일러 3번째 문제
+
+// 어떤 수를 소수의 곱으로만 나타내는 것을 소인수분해라 하고, 이 소수들을 그 수의 소인수라고 한다.
+
+// 예를 들면 13195의 소인수는 5, 7, 13, 29 이다.
+
+// 600851475143의 소인수 중에서 가장 큰 수를 구하시오.
+
+const aaa = function (n) {
+    let arr = [];
+    for(let i=1; i<=n; i++) {
+        if(n % i ==0) {
+            if(isSosu2(i) !==0) {
+                arr.push(i)
+            }
+        }
+    }
+    const answer = arr.sort((a,b) => a>b ? -1:1)
+    return answer[0]
+}
+
+const isSosu2 = function (n) {
+    let sosu =true;
+
+    for(let i =2; i<=Math.sqrt(n); i++) {
+        if(n % i ==0) {
+            sosu = false;
+            
+        }
+    }
+
+    if(sosu) {
+        return n
+    } else {
+        return 0
+    }
+}
+
+
+
+
+
+
+
+const doLikeThis = function (n) {
+    // const arr = Array.from(Array(n), (_,i)=> i+1)
+    const arr= []
+    
+    for(let i =2; i<=n; i++) {
+        if(n % i ==0) {
+            
+            console.log(i,isSosu(i))
+            // if(isSosu(i) ===0) {
+            //     break
+            // }
+           arr.push(isSosu(i))
+        }
+    }
+
+    const answer = arr.sort((a,b) => a>b ? -1:1)
+    return answer[0]
+}
+
+
+
+function isSosu(n) {
+    let sosu = true;
+    let sqrt = Math.sqrt(n)
+   
+    for(let i =2; i<=Math.sqrt(n); i++) {
+        if(n % i == 0) {
+            sosu = false 
+        }
+    }
+
+    if(sosu) {
+        return n
+    } else {
+        return 0
+    }
+}
+
+// console.log(doLikeThis(600851475143))
+    </script>
+</body>
+</html>

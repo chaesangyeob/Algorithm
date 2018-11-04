@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //객체안에 존재하는 배열에서 특정 단어가 몇번 출현하는지 구하여라
+        // 예를 들어 아래 input 객체에서는 장동건과 차승원이 2번, 나머지는 각각 한번씩 나온다
+//     const input = [
+//   {
+//     "title": "슈퍼맨",
+//     "year": "2005",
+//     "cast": ["장동건", "권상우", "이동욱", "차승원"]
+//   },
+//   {
+//     "title": "스타워즈",
+//     "year": "2013",
+//     "cast": ["차승원", "신해균", "장동건", "김수현"]
+//   },
+//   {
+//     "title": "고질라",
+//     "year": "1997",
+//     "cast": []
+//   }
+// ];
+
+const input = [
+  {
+    "title": "슈퍼맨",
+    "year": "2005",
+    "cast": ["장동건", "권상우", "이동욱", "차승원"]
+  },
+  {
+    "title": "스타워즈",
+    "year": "2013",
+    "cast": ["차승원", "신해균", "장동건", "김수현"]
+  },
+  {
+    "title": "고질라",
+    "year": "1997",
+    "cast": []
+  }
+];
+
+
+function reducer(accumulator,value,index) {
+
+  value['cast'].forEach(val => {
+    if(accumulator.hasOwnProperty(val)) {
+      accumulator[val] +=1;
+    } else {
+      accumulator[val] =1;
+    }
+  })
+  
+  
+  return accumulator
+}
+
+const result = input.reduce(reducer,{})
+    </script>
+</body>
+</html>

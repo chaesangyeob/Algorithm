@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+//출처 : http://www.careercup.com/question?id=7528760
+
+// 아마존 면접문제
+
+// 다음과 같은 형태의 배열을
+
+// [a1,a2,a3...,an,b1,b2...bn]
+
+// 다음과 같은 형태로 바꾸시오
+
+// [a1,b1,a2,b2.....an,bn]
+
+//단 입력을 저장하는 저장소 이외에 추가적인 저장소를 사용하지 마시오.
+
+function amajon(originalArr) {
+    const convertArr1 = originalArr.slice(0,originalArr.length/2);   //1,2,3
+    const convertArr2 = originalArr.slice(originalArr.length/2);   //4,5,6,7
+    let toggle = true;
+    const arr=[]
+
+    for(let i =0; i<originalArr.length/2; i++) {
+        if(toggle) {
+            if(convertArr1[i]==undefined) {
+                arr.push(convertArr2[i])
+                return arr
+            }
+            arr.push(convertArr1[i]);
+            toggle =!toggle
+            
+        } 
+         if (!toggle) {
+            arr.push(convertArr2[i])
+            toggle =!toggle
+        }
+    }
+    console.log(arr)
+    return arr
+}
+   </script> 
+</body>
+</html>

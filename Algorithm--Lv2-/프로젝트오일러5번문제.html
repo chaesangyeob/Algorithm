@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+// 출처 : 프로젝트 오일러 5번문제, 한글 번역판
+
+// 1 ~ 10 사이의 어떤 수로도 나누어 떨어지는 가장 작은 수는 2520입니다.
+
+// 그러면 1 ~ 20 사이의 어떤 수로도 나누어 떨어지는 가장 작은 수는 얼마입니까  =1~20의 최소공배수를 구하라
+
+
+
+
+// const perfectNum = function() {
+//     let n = 21
+//     while(true) {
+//         if(n % 1 ==0 && n %2 ==0&& n % 3==0 && n % 4==0 && n % 5==0 && n % 6==0  && n % 7==0 && n % 8==0 && n % 9==0 && n % 10==0 && n % 11==0 && n % 12==0 && n % 13==0 && n % 14==0 && n % 15==0 && n % 16==0 && n % 17==0 && n % 18==0 && n % 19==0 && n % 20==0) {
+//             console.log(n)
+//             break;
+//         }
+//         n++
+//     }
+// }
+
+const gcd = function (a,b) {
+    if(a%b ==0) {
+        return b
+    }  else {
+        return gcd(b,a%b)
+    }
+}
+
+const lcd = function (a,b) {
+    const answer = (a*b)/gcd(a,b);
+ 
+ 
+    return answer
+}
+
+const perfectNum = function(n) {    
+    let arr = Array.from(Array(n/2+1),(map,i)=> 2*i)
+    arr.shift()
+  
+    console.log(arr)
+   
+    return `1~20까지 모두 나누어떨어지는 수는${arr.reduce(lcd)}입니다`
+}
+
+
+console.log(perfectNum(20))
+
+
+// 2 4 6 8 10 12 14 16 18 20 이렇게 짝수로 나누어 떨어지는 거라면?
+
+// var gcd = function g(x, y) {
+//     return y ? g(y, x % y) : x;
+// }
+
+// var lcd = function(x, y) {
+//     return x * y / gcd(x, y);
+// }
+
+// var arr = Array.from({length: 20}, (v, k) => k + 1); // make 1 to 20 array with array-like object and mapFn
+
+// var res = arr.reduce(lcd);
+
+// console.log(res);
+
+    </script>
+</body>
+</html>

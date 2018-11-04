@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+//  라이브러리를 사용하지 말고 10진수를 n진수로 변환하는 프로그램을 작성하시오.. (단, n의 범위는 2 <= n <= 16)
+
+// 예)
+
+// 2진수로 변환 :
+// 8진수로 변환 : 
+// 16진수로 변환 
+
+function convert (a,b) {
+    const stack = [];
+    //스텍을 이용하자
+    let test = a
+    let rest;
+    while(test>0) {
+        rest = test%b
+        test = parseInt(test/b)
+        stack.push(rest)
+      
+    }
+    console.log(b)
+    console.log(test)
+   
+    const reverse = stack.reverse();
+    
+    return reverse.join('')
+    
+}
+
+console.log(123,8)
+    </script>
+</body>
+</html>

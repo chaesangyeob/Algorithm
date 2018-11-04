@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+// 1차원의 점들이 주어졌을 때, 그 중 가장 거리가 짧은 것의 쌍을 출력하는 함수를 작성하시오. 
+
+// 예를들어 S=[1, 3, 4, 8, 13, 17, 20] 이 주어졌다면, 결과값은 (3, 4)가 될 것이다.
+
+function distance(el) {
+    const arr =[];
+    const arr2 =[]
+    el.sort((a,b) => a>b ? 1 : -1 );
+    for(let i =0; i<el.length; i++) {
+        arr.push(Math.abs(el[i]-el[i+1]))
+
+    }
+   arr.pop()
+   arr.sort((a,b)=> a>b ? 1 : -1);
+
+
+   for(let i = 0; i<el.length; i++) {
+       if(Math.abs(el[i] - el[i+1]) == arr[0]) {
+           console.log(`가장 짧은 거리는 ${el[i]}와 ${el[i+1]} 사이의 거리인 ${arr[0]}입니다`)
+    
+       }
+   }
+}
+
+distance([1,2,3,4,5,7,9,11,32])
+distance([546,121233,11,2,3,9,7,56])
+    </script>
+</body>
+</html>

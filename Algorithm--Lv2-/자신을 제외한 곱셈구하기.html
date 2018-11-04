@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+// 입력된 인자에서 자기자신을 제외한 모든 인자들의 곱셈들을 구하여라
+// (단, 나눗셈 사용 금지)
+// 
+// 입력 예시
+// 2, 6, 4, 7
+// 출력 예시
+// 168(6*4*7), 56(2*4*7), 84(2*6*7), 48(2*6*4)  출처: 코딩도장
+
+function multi(...arguments) {
+    const answer = []
+    let b;
+    let c;
+    const arg = [...arguments]
+ 
+    for(let i =0; i<arg.length; i++){
+       b= arg.filter((a) => a !==arg[i]);
+       function reducer(accumulator, value){
+           return accumulator*value
+       }
+       c=b.reduce(reducer,1);
+       answer.push(c)
+    }
+    console.log(answer)
+    return answer
+    
+} 
+multi(1,2,3,4,5,6,7,8,9)
+        </script>
+    </body>
+    </html>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+// bool OneEditApart(string s1, string s2)
+// 한개의 문자를 삽입, 제거, 변환을 했을때 s1, s2가 동일한지를 판별하는 OneEditApart 함수를 작성하시오.
+// 예_
+
+// OneEditApart("cat", "dog") = false
+// OneEditApart("cat", "cats") = true 
+// OneEditApart("cat", "cut") = true 
+// OneEditApart("cat", "cast") = true 
+// OneEditApart("cat", "at") = true
+// OneEditApart("cat", "acts") = false 
+
+// 출처 : http://www.careercup.com/question?id=47934165294776321
+
+function OneEditApart(a,b) {
+    aSplitArr = a.split('');
+    bSplitArr = b.split('');
+    
+    
+    const same =aSplitArr.filter(x => bSplitArr.includes(x))
+    if(same[0] !==b[0] && same[1] !==b[1]) {
+        return 'false'
+    } else if(same.length == b.length -1) {
+        return 'true'
+    } else if(same.length == b.length +1) {
+        return 'ture'
+    } else if(same.length == b.length) {
+        return 'true'
+    } else {
+        return 'false'
+    }
+}
+console.log(OneEditApart("cat", "dog"));
+console.log(OneEditApart("cat", "cats"));
+console.log(OneEditApart("cat", "cut"));
+console.log(OneEditApart("cat", "cast"));
+console.log(OneEditApart("cat", "at"));
+console.log(OneEditApart("cat", "acts"));
+
+    </script>
+</body>
+</html>

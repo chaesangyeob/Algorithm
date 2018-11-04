@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //0~9까지 순서에 상관없이 모두 딱 한번식 사용되었는지를 알아내는 알고리즘을 작성하여라
+        function checkOut(a) {
+            const arr =a.split('').sort();
+            
+            for(let i =0; i<arr.length; i++) {
+                if(arr[i] == arr[i+1]) {
+                    console.log('중복되는 숫자가 있다.')
+                    return;
+                }
+            }
+
+            if(arr.includes('0'&&'1'&&'2'&&'3'&&'4'&&'5'&&'6'&&'7'&&'8'&&'9')) {
+                
+                console.log(`0~9까지 중복없이 다 나왔다`)
+            } else {
+                console.log('숫자중에 하나가 빠졌다.')
+            }
+           
+        }
+        checkOut('012345678889')
+    </script>
+</body>
+</html>

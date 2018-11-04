@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+// 1부터 10,000까지 8이라는 숫자가 총 몇번 나오는가?
+// 8이 포함되어 있는 숫자의 갯수를 카운팅 하는 것이 아니라 8이라는 숫자를 모두 카운팅 해야 한다.
+// (※ 예를들어 8808은 3, 8888은 4로 카운팅 해야 함) 출처:코딩도장
+
+function eight () {
+    let sum =''
+    for(let i = 1; i<=10000; i++) {
+        sum +=i
+    }
+    sum = sum.split('')
+    
+    const a =sum.filter(x=> x.includes('8'))
+    return `1~10000의 숫자중에 8은 총 ${a.length}만큼 들어갑니다`
+   
+}
+    </script>
+</body>
+</html>

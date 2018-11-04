@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Type Ahead 👀</title>
+</head>
+<body>
+
+
+<script>
+// OneEditApart("cat", "dog") = false
+// OneEditApart("cat", "cats") = true 
+// OneEditApart("cat", "cut") = true 
+// OneEditApart("cat", "cast") = true 
+// OneEditApart("cat", "at") = true
+// OneEditApart("cat", "acts") = false 
+// 한개의 문자를 삽입, 제거, 변환을 했을때 s1, s2가 동일한지를 판별하는 OneEditApart 함수를 작성하시오.
+
+function OneEditApart(a,b) {
+  //case one :  add
+  // const aSplit = a.split('');
+  console.log(a[0])
+
+  console.log(stringA,stringB)
+  // const bSplit = b.split('');
+  for(let i = 0; i<a.length; i++) {
+    a[i].includes(b) 
+  }
+  
+  //더하거나 뻇을때 (일단 순서 상관없이) 트루인지 트루라면 다시 순서를 보고.
+  //더했을때 로직하나, 인클루드 되있는지
+  // 뺏을 때 로직하나, 반대쪽 인클루드 있는지
+  // 변환 했을 로직하나 . 
+}
+</script>
+  </body>
+</html>

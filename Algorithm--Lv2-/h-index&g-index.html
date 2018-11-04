@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+// 연구자의 연구업적을 평가할 때 사용되는 지표 중 h-index와 g-index라는 것이 있다.
+
+// h-index : 인용 횟수가 h번 이상인 논문이 h개일 때 가능한 h의 최댓값
+// g-index : 인용 횟수가 높은 상위 g개 논문의 인용 횟수 총합이 g²이상일 때 가능한 g의 최댓값
+// 어떤 학자가 쓴 논문 각각의 인용 횟수가 주어질 때, h-index와 g-index를 계산하시오.
+
+//예
+
+// 입력 : 0 15 4 0 7 10 0  // 4 7 10 15  // 123456  
+// h-index : 4
+// g-index : 6
+
+const index = function (array) {
+    return {
+        hIndex: hIndex(array),
+        gIndex: gIndex(array)
+    }
+}
+
+const hIndex = function (array) {
+    const trimArray = array.filter(x => x>0).sort((a,b) => a>b ? -1: 1)
+    
+    let count = 0
+    for(let i =0; i<trimArray.length; i++) {
+        count =0
+        for(let j=0; j<trimArray.length; j++) {
+            if(trimArray[i] <= trimArray[j]) {
+                count ++
+                if(count==trimArray[i]) {
+                    return trimArray[i]
+                }
+            }
+        }
+    }
+}
+
+
+const gIndex = function (array) {
+   
+    // g-index : 인용 횟수가 높은 상위 g개 논문의 인용 횟수 총합이 g²이상일 때 가능한 g의 최댓값
+
+    const trimArray = array.filter(x => x>0).sort((a,b) => a>b ? -1: 1);
+    
+    const b =trimArray.reduce((acc,value) => {
+        return acc+value
+    },0)
+    
+    for(let i =1; i<=Math.max(...array); i++) {
+        let slice = trimArray.slice(0,i);
+        let sliceReduce = slice.reduce((acc,value) => {
+            return acc+value
+        },0)
+        if(sliceReduce <= i*i) {
+            return i
+        }
+    }
+
+}
+
+console.log(index([0,15,4,0,7,10,0]))
+
+    </script>
+</body>
+</html>
