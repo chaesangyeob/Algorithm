@@ -31,7 +31,31 @@
 // 201  210   89
 // 900  1000  174 
 //출처 코딩도장
+        
+        
+2018/12/11 python
 
+def collatz(a):
+  counter = 0
+  li = [a]
+  while a >1:   
+    if a  % 2 ==0 and a>1:
+      a = a//2 
+    elif a % 2 !=0 and a >=1:
+      a = 3*a+1
+    counter +=1
+    li.append(a)
+
+  return counter,li
+
+print(collatz(5))
+
+
+
+        
+
+2018/3/10
+ ## javascript
 function test(a) {
     const arrA =[a];
    
@@ -44,21 +68,18 @@ function test(a) {
             arrA.push(a)
         }
     }
- 
     return arrA
 }
 
 function test2(a,b) {
     const arr=[]
     for(let i =Math.min(a,b); i<=Math.max(a,b); i++) {
-        arr.push(test(i).length)
-        
+        arr.push(test(i).length)        
     }
     arr.sort((a,b) => a>b ? -1 : 1)
     return arr[0]
     
-    
-    
+
 }
 
     </script>
