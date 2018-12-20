@@ -19,6 +19,23 @@
 // 15 = 1, 5
 
 // 그러므로 이 경우의 답은 0:1개, 1:7개, 2:1개, 3:1개, 4:1개, 5:1개
+        
+2018/12/20 python
+
+def func():
+  count = [0,0,0,0,0,0,0,0,0,0]
+  for i in range(1,1001):
+    for j in str(i):
+      count[int(j)] += 1
+
+  print(count)
+  return count
+
+
+if __name__ == "__main__":
+  func()
+  
+  
 
 (function numCount() {
     let str = '';
