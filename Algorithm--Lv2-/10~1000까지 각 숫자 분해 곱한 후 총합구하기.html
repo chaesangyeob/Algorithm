@@ -18,7 +18,25 @@
 // 15 = 1 * 5 = 5
 
 //이 경우의 답은 0+1+2+3+4+5 = 15
+        
+2018/12/20
+        python
 
+
+def func():
+  sum_num = 0
+  num =1
+  for i in range(10,16):
+    for j in str(i):      
+      num *= int(j)
+    sum_num += num
+    num=1
+  return sum_num
+
+if __name__ =="__main__":
+  print(func())
+
+javascript
 (function multiPlus () {
     let str = '';
     let answer = 0
