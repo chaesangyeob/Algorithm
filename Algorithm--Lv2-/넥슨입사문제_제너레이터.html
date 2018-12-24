@@ -21,7 +21,38 @@
 // 셀프 넘버(self-number)라 이름 붙였다. 예를 들어 1,3,5,7,9,20,31 은 셀프 넘버 들이다.
 
 // 1 이상이고 5000 보다 작은 모든 셀프 넘버들의 합을 구하라. 출처: 코딩도장
+2018/12/24 python
 
+def d():
+  sum_li = []
+  for j in range(1,5001):
+    sum_num=j
+    for i in str(j):
+      sum_num += int(i)
+      if sum_num > 5000:
+        break
+  
+    sum_li.append(sum_num)
+  return set(sum_li)
+
+def func():
+  test = set([i for i in range(1,5001)])
+  result = test - d()
+  print(sum(result,0))
+    
+  
+
+if __name__ =="__main__":
+  func()
+
+        
+        
+        
+        
+        
+        
+        
+javascript 
 function generator() {
    const arr=[];
    let generatorArr= []
