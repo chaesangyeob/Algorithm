@@ -1,0 +1,58 @@
+5. Longest Palindromic Substring
+Medium
+
+Favorite
+
+Share
+Given a string s, find the longest palindromic substring in s. You may assume that the maximum length of s is 1000.
+
+Example 1:
+
+Input: "babad"
+Output: "bab"
+Note: "aba" is also a valid answer.
+Example 2:
+
+Input: "cbbd"
+Output: "bb"
+
+
+var lengthOfLongestSubstring = function(s) {
+    let str = '';
+    let longestStr = []
+    let arr =[]
+    let max =''
+    if(s ==null || s==undefined || s.length ==0) {
+        return ''
+    } else if(s.length ==1) {
+        return s
+    }
+    for(let i=0; i<s.length; i++) {
+        if(typeof s[i] == 'number') s[i] = str(s[i])
+        str =''
+        str += s[i]
+        for(let j = i+1; j<=s.length; j++) {
+            if(typeof s[j] == 'number') s[j] = str(s[j])
+            str += s[j]
+            if(str ==str.split('').reverse().join('')) {
+                longestStr.push(str)
+            }
+            
+        }
+    }
+    if(longestStr.length ==0) {
+        return s[0]
+    }
+    let long = ''
+    for(item of longestStr) {
+        if(item.length > long.length) {
+            long = item;
+        }
+    }
+    let a = longestStr.indexOf(long)
+   
+
+    return longestStr[a]
+};
+
+console.log(lengthOfLongestSubstring("civilwartestingwhetherthatnaptionoranynartionsoconceivedandsodedicatedcanlongendureWeareqmetonagreatbattlefiemldoftzhatwarWehavecometodedicpateaportionofthatfieldasafinalrestingplaceforthosewhoheregavetheirlivesthatthatnationmightliveItisaltogetherfangandproperthatweshoulddothisButinalargersensewecannotdedicatewecannotconsecratewecannothallowthisgroundThebravelmenlivinganddeadwhostruggledherehaveconsecrateditfaraboveourpoorponwertoaddordetractTgheworldadswfilllittlenotlenorlongrememberwhatwesayherebutitcanneverforgetwhattheydidhereItisforusthelivingrathertobededicatedheretotheulnfinishedworkwhichtheywhofoughtherehavethusfarsonoblyadvancedItisratherforustobeherededicatedtothegreattdafskremainingbeforeusthatfromthesehonoreddeadwetakeincreaseddevotiontothatcauseforwhichtheygavethelastpfullmeasureofdevotionthatweherehighlyresolvethatthesedeadshallnothavediedinvainthatthisnationunsderGodshallhaveanewbirthoffreedomandthatgovernmentofthepeoplebythepeopleforthepeopleshallnotperishfromtheearth"))
