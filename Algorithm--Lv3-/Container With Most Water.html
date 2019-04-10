@@ -1,0 +1,38 @@
+problems: check here ->   https://leetcode.com/problems/container-with-most-water/
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<meta name="google-site-verification" content="CAKRdqTlc0a9qxqarjsSba3GAGbPI3j-bhv6K04ewGM">
+    <title>Fidelity International</title>
+	<meta property='og:title' content='Fidelity International'/>
+	<meta property='og:image' content='https://www.fidelity.eu/static/master/images/notifications/logo.png'/>
+	<script>
+var maxArea = function(height) {
+    height = height.map((x,i) => {
+        return [i+1,x]
+    })
+   
+    let biggest = 0
+    for(let i =0; i<height.length-1; i++) {
+        for(let j=i+1; j<height.length; j++) {
+            let x = height[j][0]-height[i][0];
+            let hi = Math.min(height[j][1],height[i][1]);
+          if(x*hi >biggest) {
+              biggest = x*hi
+          }
+        }
+    }
+  
+    return biggest
+    for(let i =0; i<1; i++) {
+        for(let j=i+1; j<2; j++) {
+            console.log(i,j)
+        }
+    }
+};
+ maxArea([1,8,6,2,5,4,8,3,7])
+    </script>
+</body>
+</html>
